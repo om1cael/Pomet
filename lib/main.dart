@@ -4,16 +4,17 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
   await dotenv.load();
+
   await Supabase.initialize(
     url: dotenv.env['SUPABASE_URL']!,
     anonKey: dotenv.env['SUPABASE_ANON_KEY']!
   );
 
-  runApp(const MainApp());
+  runApp(const Pomet());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class Pomet extends StatelessWidget {
+  const Pomet({super.key});
 
   @override
   Widget build(BuildContext context) {
