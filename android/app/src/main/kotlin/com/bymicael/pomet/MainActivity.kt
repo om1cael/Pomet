@@ -1,4 +1,4 @@
-package com.example.pomet
+package com.bymicael.pomet
 
 import io.flutter.embedding.android.FlutterActivity
 
