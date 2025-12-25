@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:pomet/ui/setup/view_model/setup_view_model.dart';
 
 class SetupView extends StatelessWidget {
-  const SetupView({super.key});
+  const SetupView({
+    super.key,
+    required SetupViewModel viewModel,
+  }) : _viewModel = viewModel;
+
+  final SetupViewModel _viewModel;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +29,8 @@ class SetupView extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {}, 
+                      onPressed: () async => 
+                        await _viewModel.signInAnonymously(), 
                       style: ButtonStyle(
                         backgroundColor: WidgetStateProperty<Color?>.fromMap(<WidgetStatesConstraint, Color?>{
                           WidgetState.any: Colors.blueGrey,
